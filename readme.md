@@ -2,6 +2,8 @@
 
 This is an upside-down variant of Katana60.
 
+![Anatak60](anatak1.png?raw=true "Anatak60")
+
 ## Usage
 
 ```
