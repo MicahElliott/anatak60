@@ -21,12 +21,14 @@ same-finger utilization (SFU).
 
 ## Acquiring, Setup
 
-1. Order a [Katana60 from Candykeys](https://candykeys.com/product/katana60-pcb-V2).
-1. Solder switches of your choosing, put on some caps.
+1. Order a [Katana60 board from Candykeys](https://candykeys.com/product/katana60-pcb-V2).
+1. You can’t get the plate, but it’s not actuall needed.
+1. Solder switches of your choosing (better if PCB-mountable since no plate).
+1. Put on some caps.
 1. Set up [QMK firmware](https://github.com/qmk/qmk_firmware).
 
 ## Caveats
 
 - This layout will undergo some tweaks.
-- The keymap.c file is upside-down and backwards, could do some  work
-  to fix that.
+- The keymap.c file is upside-down and backwards, could maybe do some
+  work to fix that.
