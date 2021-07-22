@@ -27,6 +27,12 @@ same-finger utilization (SFU).
 1. Put on some caps.
 1. Set up [QMK firmware](https://github.com/qmk/qmk_firmware).
 
+## Compose/Multi-key in Linux
+
+Run this before you start your window manager: `xmodmap -e 'keycode 96 = Multi_key'`
+
+Then you can tap the top-middle button, then ~a to get: ã
+
 ## Caveats
 
 - This layout will undergo some tweaks.

@@ -49,8 +49,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LT(NUMB,KC_EQL),   _______, KC_PIPE, GUI_RBRC,KC_RAPC, KC_SPC,  KC_MINS, KC_TILD, KC_PLUS, KC_COLN, KC_LAPO, GUI_LBRC,KC_BSLS, _______, LT(NUMB,KC_GRV),
     SFT_T(KC_COLN),    KC_SLSH, KC_DOT,  KC_COMM, KC_H,    KC_K,    KC_INS,           KC_CAPS, KC_V,    KC_D,    KC_C,    KC_X,    KC_Z,    SFT_T(KC_SCLN),
     CTL_T(KC_ENT),     KC_O,    KC_I,    KC_E,    KC_N,    KC_M,    KC_RCBR,          KC_LCBR, KC_G,    KC_T,    KC_S,    KC_R,    KC_A,    CTL_T(KC_TAB),
-    LT(SYMB,KC_BSPC),  KC_QUOT, KC_Y,    KC_U,    KC_L,    KC_J,    KC_RABK, _______, KC_LABK, KC_B,    KC_P,    KC_F,    KC_W,    KC_Q,    LT(SYMB,KC_ESC),
-    _______,           KC_EQL,  KC_UNDS, KC_ASTR, KC_DLR,                   _______,          KC_CIRC, KC_PERC, KC_HASH, KC_GRV,  KC_SPC,  _______
+    LT(SYMB,KC_BSPC),  KC_QUOT, KC_Y,    KC_U,    KC_L,    KC_J,    KC_RABK, KC_F12,  KC_LABK, KC_B,    KC_P,    KC_F,    KC_W,    KC_Q,    LT(SYMB,KC_ESC),
+    _______,           KC_EQL,  KC_UNDS, KC_ASTR, KC_DLR,                    _______,          KC_CIRC, KC_PERC, KC_HASH, KC_GRV,  KC_SPC,  _______
   ),
   [NUMB] = LAYOUT_1_a(
     _______,           _______, _______, _______, _______, _______, _______, DF(0),   _______, _______, _______, _______, _______, _______, _______,
