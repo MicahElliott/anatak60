@@ -46,19 +46,18 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT_1_a(/* Base */
-    LT(NUMB,KC_EQL),   _______, KC_PIPE, GUI_RBRC,KC_RAPC, KC_SPC,  KC_PLUS, KC_TILD, KC_COLN, KC_MINS, KC_LAPO, GUI_LBRC,KC_BSLS, _______, LT(NUMB,KC_GRV),
-    SFT_T(KC_GRV),     KC_SLSH, KC_DOT,  KC_COMM, KC_H,    KC_K,    KC_INS,           KC_CAPS, KC_V,    KC_D,    KC_C,    KC_X,    KC_Z,    SFT_T(KC_SCLN),
+    LT(NUMB,KC_GRV),   _______, _______, GUI_RBRC,SC_RAPC, KC_SPC,  KC_RCBR, KC_TILD, KC_LCBR, KC_PIPE, SC_LAPO, GUI_LBRC,_______, _______, LT(NUMB,KC_BSLS),
+    SFT_T(KC_EQL),     KC_SLSH, KC_DOT,  KC_COMM, KC_H,    KC_K,    KC_F12,           KC_F12,  KC_V,    KC_D,    KC_C,    KC_X,    KC_Z,    SFT_T(KC_SCLN),
     CTL_T(KC_ENT),     KC_O,    KC_I,    KC_E,    KC_N,    KC_M,    KC_RABK,          KC_LABK, KC_G,    KC_T,    KC_S,    KC_R,    KC_A,    CTL_T(KC_TAB),
-    LT(SYMB,KC_BSPC),  KC_QUOT, KC_Y,    KC_U,    KC_L,    KC_J,    KC_RCBR, KC_F12,  KC_LCBR, KC_B,    KC_P,    KC_F,    KC_W,    KC_Q,    LT(SYMB,KC_ESC),
-    _______,           KC_EQL,  KC_UNDS, KC_ASTR, KC_DLR,                    _______,          KC_CIRC, KC_PERC, KC_HASH, KC_AT,   KC_SPC,  _______
+    LT(SYMB,KC_BSPC),  KC_QUOT, KC_Y,    KC_U,    KC_L,    KC_J,    KC_CIRC, KC_F12,  KC_HASH, KC_B,    KC_P,    KC_F,    KC_W,    KC_Q,    LT(SYMB,KC_MINS),
+    _______,           KC_PLUS, KC_UNDS, KC_ASTR, KC_AMPR,                   _______,          KC_AT,   KC_PERC, KC_COLN, KC_DLR,  KC_EXLM, KC_ESC
   ),
   [NUMB] = LAYOUT_1_a(
     _______,           _______, _______, _______, _______, _______, _______, DF(0),   _______, _______, _______, _______, _______, _______, _______,
-    _______,           KC_SLSH, KC_3,    KC_2,    KC_1,    KC_GT,   _______,          _______, KC_LT,   KC_PIPE, _______, KC_RPRN, KC_LPRN, _______,
-    _______,           KC_ASTR, KC_6,    KC_5,    KC_4,    KC_RCBR, _______,          _______, KC_LCBR, KC_PIPE, _______, KC_BSLS, KC_AMPR, _______,
-    _______,           KC_0,    KC_9,    KC_8,    KC_7,    KC_CIRC, _______, _______, _______, KC_PERC, KC_DLR,  KC_HASH, KC_AT,   KC_EXLM, KC_TILD,
-
-    _______,           _______, _______, _______,          _______, KC_P0,      _______,       _______, KC_PDOT, KC_PENT, _______, _______
+    _______,           KC_SLSH, KC_3,    KC_2,    KC_1,    KC_GT,   _______,          _______, KC_LT,   KC_PIPE, KC_LBRC, _______, KC_LCBR, _______,
+    _______,           KC_DOT,  KC_6,    KC_5,    KC_4,    KC_RCBR, _______,          _______, KC_LCBR, KC_DLR,  KC_BSLS, _______, KC_AMPR, _______,
+    _______,           KC_0,    KC_9,    KC_8,    KC_7,    KC_CIRC, _______, _______, _______, KC_PERC, KC_PERC, KC_HASH, KC_AT,   KC_EXLM, KC_TILD,
+    _______,           _______, _______, KC_ASTR,          _______, KC_P0,      _______,       _______, KC_PDOT, KC_PENT, _______, _______
   ),
   [SYMB] = LAYOUT_1_a(
     KC_DOWN,           KC_END,  KC_F12,  KC_F11,  KC_F10,  _______, _______, _______, _______, _______, _______, _______, _______, KC_VOLD, _______,
@@ -69,10 +68,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,           _______, _______, _______,                _______,    _______,    KC_DEL,        _______, _______, _______, _______, _______
   ),
   [CURS] = LAYOUT_1_a(
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-    _______,     _______, _______, _______, _______, _______, _______, _______, _______, K_PRVWD, KC_UP,   K_NXTWD, _______,      _______,
-    _______,   _______, KC_LCTL, KC_LALT, KC_LSFT, _______, _______,      _______, KC_BSPC, KC_LEFT, KC_DOWN, KC_RIGHT,KC_DEL,    _______,
-    _______, UNDO,    CUT,     COPY,    PASTE,   _______, _______, _______, _______, _______, K_LSTRT, _______, K_LEND,  _______, _______,
-    _______, _______, _______, _______,                _______,    _______,    _______,       _______, _______, _______, _______, _______
+    _______,           _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    _______,           _______, _______, _______, _______, _______, _______,          _______, _______, K_PRVWD, KC_UP,   K_NXTWD, _______, _______,
+    _______,           _______, KC_LCTL, KC_LALT, KC_LSFT, _______, _______,          _______, KC_BSPC, KC_LEFT, KC_DOWN, KC_RIGHT,KC_DEL,  _______,
+    _______,           UNDO,    CUT,     COPY,    PASTE,   _______, _______, _______, _______, _______, K_LSTRT, _______, K_LEND,  _______, _______,
+    _______,           _______, _______, _______, _______,                   _______,          _______, _______, _______, _______, _______, _______
   )
 };
+
+/* Enable the CURS layer, pressing both the other layers together. */
+/* https://docs.splitkb.com/hc/en-us/articles/360018614379-Using-tri-state-layers */
+/* https://docs.qmk.fm/#/ref_functions?id=update_tri_layer_statestate-x-y-z */
+layer_state_t layer_state_set_user(layer_state_t state) {
+  return update_tri_layer_state(state, NUMB, SYMB, CURS);
+}
