@@ -46,25 +46,24 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT_1_a(/* Base */
-    LT(NUMB,KC_GRV),   _______, _______, GUI_RBRC,SC_RAPC, KC_SPC,  KC_RCBR, KC_TILD, KC_LCBR, KC_PIPE, SC_LAPO, GUI_LBRC,_______, _______, LT(NUMB,KC_BSLS),
-    SFT_T(KC_EQL),     KC_SLSH, KC_DOT,  KC_COMM, KC_H,    KC_K,    KC_F12,           KC_F12,  KC_V,    KC_D,    KC_C,    KC_X,    KC_Z,    SFT_T(KC_SCLN),
+    LT(NUMB,KC_ESC),   _______, _______, GUI_RBRC,SC_RAPC, KC_SPC,  KC_PLUS, KC_TILD, KC_PIPE, KC_MINS, SC_LAPO, GUI_LBRC,_______, _______, LT(NUMB,KC_BSLS),
+    SFT_T(KC_GRV),     KC_SLSH, KC_DOT,  KC_COMM, KC_H,    KC_K,    KC_F12,           KC_F12,  KC_V,    KC_D,    KC_C,    KC_X,    KC_Z,    SFT_T(KC_SCLN),
     CTL_T(KC_ENT),     KC_O,    KC_I,    KC_E,    KC_N,    KC_M,    KC_RABK,          KC_LABK, KC_G,    KC_T,    KC_S,    KC_R,    KC_A,    CTL_T(KC_TAB),
-    LT(SYMB,KC_BSPC),  KC_QUOT, KC_Y,    KC_U,    KC_L,    KC_J,    KC_CIRC, KC_F12,  KC_HASH, KC_B,    KC_P,    KC_F,    KC_W,    KC_Q,    LT(SYMB,KC_MINS),
-    _______,           KC_PLUS, KC_UNDS, KC_ASTR, KC_AMPR,                   _______,          KC_AT,   KC_PERC, KC_COLN, KC_DLR,  KC_EXLM, KC_ESC
+    LT(SYMB,KC_BSPC),  KC_QUOT, KC_Y,    KC_U,    KC_L,    KC_J,    KC_CIRC, KC_F12,  KC_HASH, KC_B,    KC_P,    KC_F,    KC_W,    KC_Q,    LT(SYMB,KC_EQL),
+    KC_HASH,           KC_RCBR, KC_UNDS, KC_ASTR, KC_AMPR,                   _______,          KC_AT,   KC_PERC, KC_COLN, KC_DLR,  KC_LCBR, KC_EXLM
   ),
   [NUMB] = LAYOUT_1_a(
     _______,           _______, _______, _______, _______, _______, _______, DF(0),   _______, _______, _______, _______, _______, _______, _______,
     _______,           KC_SLSH, KC_3,    KC_2,    KC_1,    KC_GT,   _______,          _______, KC_LT,   KC_PIPE, KC_LBRC, _______, KC_LCBR, _______,
     _______,           KC_DOT,  KC_6,    KC_5,    KC_4,    KC_RCBR, _______,          _______, KC_LCBR, KC_DLR,  KC_BSLS, _______, KC_AMPR, _______,
-    _______,           KC_0,    KC_9,    KC_8,    KC_7,    KC_CIRC, _______, _______, _______, KC_PERC, KC_PERC, KC_HASH, KC_AT,   KC_EXLM, KC_TILD,
-    _______,           _______, _______, KC_ASTR,          _______, KC_P0,      _______,       _______, KC_PDOT, KC_PENT, _______, _______
+    _______,           KC_0,    KC_9,    KC_8,    KC_7,    KC_CIRC, _______, _______, _______, KC_PERC, KC_PERC, KC_HASH, KC_AT,   KC_EXLM, _______,
+    _______,           _______, _______, _______,          _______, KC_P0,   _______,       _______, _______, _______, _______, _______
   ),
   [SYMB] = LAYOUT_1_a(
     KC_DOWN,           KC_END,  KC_F12,  KC_F11,  KC_F10,  _______, _______, _______, _______, _______, _______, _______, _______, KC_VOLD, _______,
     KC_UP,             KC_PGDN, KC_F3,   KC_F2,   KC_F1,   _______, _______,          _______, _______, _______, _______, KC_MUTE, KC_VOLU, _______,
     _______,           KC_PGUP, KC_F6,   KC_F5,   KC_F4,   KC_DEL,  _______,          _______, _______, KC_RGHT, KC_DOWN, KC_LEFT, KC_PGDN, _______,
     _______,           KC_HOME, KC_F9,   KC_F8,   KC_F7,   KC_INS,  _______, _______, _______, _______, KC_END,  KC_UP,   KC_HOME, KC_PGUP, _______,
-
     _______,           _______, _______, _______,                _______,    _______,    KC_DEL,        _______, _______, _______, _______, _______
   ),
   [CURS] = LAYOUT_1_a(
