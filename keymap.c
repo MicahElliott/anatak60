@@ -46,10 +46,10 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT_1_a(/* Base */
-    LT(NUMB,KC_ESC),   _______, _______, GUI_RBRC,SC_RAPC, KC_SPC,  KC_BSPC, KC_TILD, KC_PIPE, KC_MINS, SC_LAPO, GUI_LBRC,_______, _______, LT(NUMB,KC_BSLS),
-    SFT_T(KC_GRV),     KC_SLSH, KC_DOT,  KC_COMM, KC_H,    KC_Z,    KC_F12,           KC_F12,  KC_Q,    KC_D,    KC_C,    KC_V,    KC_K,    SFT_T(KC_SCLN),
+    LT(NUMB,KC_ESC),   _______, _______, GUI_RBRC,SC_RAPC, KC_SPC,  KC_BSPC, KC_TILD, KC_ENT,  KC_O,    SC_LAPO, GUI_LBRC,_______, _______, LT(NUMB,KC_BSLS),
+    SFT_T(KC_GRV),     KC_SLSH, KC_DOT,  KC_COMM, KC_H,    KC_Z,    KC_F12,           KC_F12,  KC_K,    KC_D,    KC_C,    KC_Q,    KC_V,    SFT_T(KC_SCLN),
     CTL_T(KC_ENT),     KC_A,    KC_I,    KC_E,    KC_N,    KC_X,    KC_RABK,          KC_LABK, KC_G,    KC_T,    KC_S,    KC_R,    KC_M,    CTL_T(KC_TAB),
-    LT(SYMB,KC_BSPC),  KC_QUOT, KC_U,    KC_O,    KC_Y,    KC_J,    KC_CIRC, KC_F12,  KC_HASH, KC_B,    KC_P,    KC_F,    KC_L,    KC_W,    LT(SYMB,KC_EQL),
+    LT(SYMB,KC_BSPC),  KC_QUOT, KC_U,    KC_MINS, KC_Y,    KC_J,    KC_CIRC, KC_F12,  KC_HASH, KC_B,    KC_P,    KC_F,    KC_L,    KC_W,    LT(SYMB,KC_EQL),
     KC_PLUS,           KC_RCBR, KC_UNDS, KC_ASTR, KC_AMPR,                   _______,          KC_AT,   KC_PERC, KC_COLN, KC_DLR,  KC_LCBR, KC_EXLM
   ),
   [NUMB] = LAYOUT_1_a(
