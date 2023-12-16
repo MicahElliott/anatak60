@@ -46,17 +46,17 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT_1_a(/* Base */
-    LT(NUMB,KC_ESC),   _______, _______, GUI_RBRC,SC_RAPC, KC_SPC,  KC_BSPC, KC_TILD, KC_ENT,  KC_O,    SC_LAPO, GUI_LBRC,_______, _______, LT(NUMB,KC_BSLS),
-    SFT_T(KC_GRV),     KC_SLSH, KC_DOT,  KC_COMM, KC_H,    KC_Z,    KC_F12,           KC_F12,  KC_Q,    KC_D,    KC_C,    KC_X,    KC_V,    SFT_T(KC_SCLN),
-    CTL_T(KC_ENT),     KC_A,    KC_I,    KC_E,    KC_N,    KC_K,    KC_RABK,          KC_LABK, KC_G,    KC_T,    KC_S,    KC_R,    KC_M,    CTL_T(KC_TAB),
-    LT(SYMB,KC_BSPC),  KC_QUOT, KC_Y,    KC_U,    KC_B,    KC_MINS, KC_CIRC, KC_F12,  KC_HASH, KC_J,    KC_P,    KC_F,    KC_L,    KC_W,    LT(SYMB,KC_EQL),
+    LT(NUMB,KC_ESC),   _______, _______, GUI_RBRC,SC_RAPC, KC_SPC,  KC_BSPC, KC_TILD, KC_LSFT, KC_O,    SC_LAPO, GUI_LBRC,_______, _______, LT(NUMB,KC_BSLS),
+    KC_SLSH,           QK_REP,  KC_DOT,  KC_COMM, KC_H,    KC_Z,    KC_PIPE,          KC_PLUS, KC_K,    KC_D,    KC_C,    KC_L,    KC_W,    KC_SCLN,
+    CTL_T(KC_ENT),     KC_A,    KC_I,    KC_E,    KC_N,    KC_B,    KC_RABK,          KC_LABK, KC_G,    KC_T,    KC_S,    KC_R,    KC_M,    CTL_T(KC_TAB),
+    KC_DQUO,           KC_QUOT, KC_Y,    KC_U,    KC_P,    KC_J,    KC_CIRC, KC_F12,  KC_HASH, KC_MINS, KC_V,    KC_F,    KC_X,    KC_Q,    LT(SYMB,KC_EQL),
     KC_PLUS,           KC_RCBR, KC_UNDS, KC_ASTR, KC_AMPR,                   _______,          KC_AT,   KC_PERC, KC_COLN, KC_DLR,  KC_LCBR, KC_EXLM
   ),
   [NUMB] = LAYOUT_1_a(
-    _______,           _______, _______, _______, _______, _______, _______, DF(0),   _______, _______, _______, _______, _______, _______, _______,
+    _______,           _______, _______, _______, KC_0,    _______, _______, DF(0),   _______, _______, _______, _______, _______, _______, _______,
     _______,           KC_SLSH, KC_3,    KC_2,    KC_1,    KC_GT,   _______,          _______, KC_LT,   KC_PIPE, KC_LBRC, _______, KC_LCBR, _______,
     _______,           KC_DOT,  KC_6,    KC_5,    KC_4,    KC_RCBR, _______,          _______, KC_LCBR, KC_DLR,  KC_BSLS, _______, KC_AMPR, _______,
-    _______,           KC_0,    KC_9,    KC_8,    KC_7,    KC_CIRC, _______, _______, _______, KC_PERC, KC_PERC, KC_HASH, KC_AT,   KC_EXLM, _______,
+    _______,           KC_GRV,  KC_9,    KC_8,    KC_7,    KC_CIRC, _______, _______, _______, KC_PERC, KC_PERC, KC_HASH, KC_AT,   KC_EXLM, _______,
     _______,           _______, _______, _______,          _______, KC_P0,   _______,       _______, _______, _______, _______, _______
   ),
   [SYMB] = LAYOUT_1_a(
@@ -80,4 +80,38 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* https://docs.qmk.fm/#/ref_functions?id=update_tri_layer_statestate-x-y-z */
 layer_state_t layer_state_set_user(layer_state_t state) {
   return update_tri_layer_state(state, NUMB, SYMB, CURS);
+}
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (record->event.pressed) {
+      int rep_count = get_repeat_key_count();
+      if (rep_count > 0) {
+        switch (keycode) {
+        case KC_SPC:  unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("the"); return false;
+        case KC_COMM: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING(" but"); return false;
+        /* case KC_DOT:  unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("and"); return false; */
+        case KC_B:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ehind"); return false;
+        case KC_C:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ontrol"); return false;
+        case KC_D:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("epend"); return false;
+          /* case KC_F:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("rom"); return false; */ // too many doubles
+        case KC_G:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ood"); return false;
+        case KC_H:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("undred"); return false;
+        case KC_I:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("dea"); return false; // interest, instrument, industry,
+        case KC_J:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("oin"); return false;
+        case KC_K:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("eep"); return false;
+        case KC_N:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("umber"); return false;
+        case KC_P:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("roduc"); return false;
+        case KC_Q:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("u"); return false;
+        /* case KC_R:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("emember"); return false; // round, real, remember */
+        case KC_U:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING(""); return false; // TODO/st
+        case KC_V:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ery"); return false; // village
+        /* case KC_:  unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("that"); return false; */
+        case KC_W:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ith"); return false;
+        case KC_X:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING(""); return false;
+        case KC_Z:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING(""); return false;
+        /* case KC_SPC:  unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("for"); return false; */
+        }
+      }
+    }
+    return true;
 }
