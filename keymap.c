@@ -103,12 +103,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_P:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("roduc"); return false;
         case KC_Q:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("u"); return false;
         /* case KC_R:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("emember"); return false; // round, real, remember */
-        case KC_U:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING(""); return false; // TODO/st
+        case KC_R:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ly"); return false;
+        case KC_U:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("e"); return false; // TODO
         case KC_V:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ery"); return false; // village
         /* case KC_:  unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("that"); return false; */
         case KC_W:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ith"); return false;
         case KC_X:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING(""); return false;
-        case KC_Z:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING(""); return false;
+        /* case KC_Z:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING(""); return false; */
         /* case KC_SPC:  unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("for"); return false; */
         }
       }
