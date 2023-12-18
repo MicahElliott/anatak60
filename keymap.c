@@ -93,7 +93,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_B:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ehind"); return false;
         case KC_C:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ontrol"); return false;
         case KC_D:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("epend"); return false;
-          /* case KC_F:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("rom"); return false; */ // too many doubles
+        /* case KC_F:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("rom"); return false; */ // too many doubles
+        case KC_F:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("orward"); return false;
         case KC_G:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ood"); return false;
         case KC_H:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("undred"); return false;
         case KC_I:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("dea"); return false; // interest, instrument, industry,
