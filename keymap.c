@@ -46,11 +46,11 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT_1_a(
-    LT(NUMB,KC_ESC),   _______, _______, GUI_RBRC,SC_RAPC, KC_SPC,  KC_BSPC, KC_TILD, KC_MINS, KC_N,    SC_LAPO, GUI_LBRC,_______, _______, LT(NUMB,KC_BSLS),
-    QK_REP,  KC_COMM,  KC_DOT,  KC_SLSH, KC_Y,    KC_Z,    KC_PIPE,          KC_PLUS, KC_K,    KC_D,    KC_C,    KC_L,    KC_W,    KC_LSFT,
-    CTL_T(KC_ENT),     KC_A,    KC_I,    KC_E,    KC_H,    KC_SCLN, KC_RABK,          KC_LABK, KC_G,    KC_T,    KC_S,    KC_R,    KC_M,    CTL_T(KC_TAB),
-    KC_DQUO,           KC_QUOT, KC_U,    KC_O,    KC_P,    KC_J,    KC_CIRC, KC_F12,  KC_HASH, KC_Q,    KC_B,    KC_F,    KC_X,    KC_V,    LT(SYMB,KC_EQL),
-    KC_PLUS,           KC_RCBR, KC_UNDS, KC_ASTR, KC_AMPR,                   _______,          KC_AT,   KC_PERC, KC_COLN, KC_DLR,  KC_LCBR, KC_EXLM
+    KC_RSFT,           _______, _______, GUI_RBRC,SC_RAPC, KC_SPC,  KC_BSPC, KC_TILD, KC_RSFT, KC_N,    SC_LAPO, GUI_LBRC,_______, _______, LT(NUMB,KC_BSLS),
+    QK_REP,            KC_COMM, KC_DOT,  KC_SLSH, KC_MINS, KC_Z,    KC_PIPE,          KC_PLUS, KC_K,    KC_D,    KC_C,    KC_X,    KC_W,    KC_M,
+    CTL_T(KC_ENT),     KC_A,    KC_I,    KC_E,    KC_H,    KC_SCLN, KC_RABK,          KC_LABK, KC_G,    KC_T,    KC_S,    KC_R,    KC_L,    CTL_T(KC_TAB),
+    KC_DQUO,           KC_QUOT, KC_Y,    KC_O,    KC_U,    KC_J,    KC_CIRC, KC_F12,  KC_HASH, KC_Q,    KC_P,    KC_F,    KC_B,    KC_V,    LT(SYMB,KC_EQL),
+    KC_PLUS,           KC_RCBR, KC_UNDS, KC_ASTR, KC_AMPR,                   _______,          KC_AT,   KC_PERC, KC_COLN, KC_DLR,  KC_LCBR, KC_ESC
   ),
   [NUMB] = LAYOUT_1_a(
     _______,           _______, _______, _______, KC_0,    _______, _______, DF(0),   _______, _______, _______, _______, _______, _______, _______,
