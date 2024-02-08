@@ -56,7 +56,7 @@ static uint16_t prenasal_proximity;
 
 // Combos
 
-// const uint16_t PROGMEM test_combo1[] = {KC_L,    KC_R,    COMBO_END};
+const uint16_t PROGMEM test_combo1[] = {KC_L,    KC_R,    COMBO_END};
 // const uint16_t PROGMEM test_combo2[] = {KC_J,    KC_B,    COMBO_END};
 const uint16_t PROGMEM test_combo3[] = {KC_K,    KC_X,    COMBO_END};
 const uint16_t PROGMEM test_combo4[] = {KC_DOT,  KC_COMM, COMBO_END};
@@ -65,9 +65,11 @@ const uint16_t PROGMEM test_combo6[] = {KC_X,    KC_Q,    COMBO_END};
 const uint16_t PROGMEM test_combo7[] = {KC_B,    KC_F,    COMBO_END};
 const uint16_t PROGMEM test_combo8[] = {KC_F,    KC_P,    COMBO_END};
 const uint16_t PROGMEM test_combo9[] = {KC_J,    KC_R,    COMBO_END};
-const uint16_t PROGMEM test_combo10[] = {KC_P,    KC_V,    COMBO_END};
+const uint16_t PROGMEM test_combo10[] = {KC_P,   KC_V,    COMBO_END};
+const uint16_t PROGMEM test_combo11[] = {KC_COMM,KC_MINS, COMBO_END};
+const uint16_t PROGMEM test_combo12[] = {KC_L,   KC_R, COMBO_END};
 combo_t key_combos[] = {
-    // COMBO(test_combo1, KC_TAB),
+    COMBO(test_combo1, KC_TAB),
     // COMBO(test_combo2, LCTL(KC_W)),
     COMBO(test_combo3, KC_Z),
     COMBO(test_combo4, KC_DQUO),
@@ -76,7 +78,8 @@ combo_t key_combos[] = {
     COMBO(test_combo7, LCTL(KC_TAB)),
     COMBO(test_combo8, LSFT(LGUI(KC_4))),
     COMBO(test_combo9, LCTL(KC_W)),
-    COMBO(test_combo9, LCTL(KC_V)),
+    COMBO(test_combo10, LCTL(KC_V)),
+    COMBO(test_combo11, KC_GRV),
     /* COMBO(test_combo2, LClrTL(KC_Z)), // keycodes with modifiers are possible too! */
 };
 
