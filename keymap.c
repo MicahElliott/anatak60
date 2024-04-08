@@ -82,10 +82,9 @@ const uint16_t PROGMEM test_combo5[] =  {KC_C,    KC_D,    COMBO_END};
 const uint16_t PROGMEM test_combo6[] =  {KC_G,    KC_Q,    COMBO_END};
 const uint16_t PROGMEM test_combo7[] =  {KC_B,    KC_F,    COMBO_END};
 const uint16_t PROGMEM test_combo8[] =  {KC_F,    KC_P,    COMBO_END};
-const uint16_t PROGMEM test_combo9[] =  {KC_DQUO, KC_R,    COMBO_END};
+const uint16_t PROGMEM test_combo9[] =  {KC_F,    KC_S,    COMBO_END};
 const uint16_t PROGMEM test_combo10[] = {KC_P,    KC_X,    COMBO_END};
 const uint16_t PROGMEM test_combo11[] = {KC_COMM, KC_MINS, COMBO_END};
-const uint16_t PROGMEM test_combo12[] = {KC_L,    KC_R,    COMBO_END};
 const uint16_t PROGMEM test_combo13[] = {KC_SLSH, KC_DOT,  COMBO_END};
 const uint16_t PROGMEM test_combo14[] = {KC_DQUO, KC_B,    COMBO_END};
 const uint16_t PROGMEM test_combo15[] = {KC_F,    KC_S,    COMBO_END};
@@ -99,11 +98,12 @@ const uint16_t PROGMEM test_combo22[] = {KC_N,    KC_H,    COMBO_END};
 const uint16_t PROGMEM test_combo23[] = {KC_H,    KC_SLSH, COMBO_END};
 const uint16_t PROGMEM test_combo24[] = {KC_T,    KC_M,    COMBO_END};
 const uint16_t PROGMEM test_combo25[] = {KC_W,    KC_Y,    COMBO_END};
+const uint16_t PROGMEM test_combo26[] = {KC_L,    KC_Q,    COMBO_END};
 combo_t key_combos[] = {
     COMBO(test_combo1, KC_TAB),
     // COMBO(test_combo2, LCTL(KC_W)),
     COMBO(test_combo3,  KC_Z),
-    COMBO(test_combo4,  KC_DQUO),
+    /* COMBO(test_combo4,  SEND_STRING(SS_TAP(X_APP) "'")), */
     COMBO(test_combo5,  KC_J),
     COMBO(test_combo6,  LCTL(LGUI(KC_V))),
     COMBO(test_combo7,  LCTL(KC_TAB)),
@@ -124,6 +124,7 @@ combo_t key_combos[] = {
     COMBO(test_combo23, KC_UNDS),
     COMBO(test_combo24, KC_COLN),
     COMBO(test_combo25, KC_COLN),
+    COMBO(test_combo26,  LCTL(KC_A)),
 };
 
 
@@ -134,8 +135,8 @@ combo_t key_combos[] = {
 enum layer_names {
     BASE,
     NUMB,
-    EURO,
     SYMB,
+    EURO,
     /* CURS, */
 };
 
@@ -163,7 +164,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LT(NUMB,KC_GRV),   _______, K_SCRN,  GUI_RBRC,SC_RAPC, KC_SPC,    KC_BSPC, KC_Z,         OSM(MOD_LSFT),QK_REP,  SC_LAPO, GUI_LBRC,SUPTAB,   _______, LT(NUMB,KC_BSLS),
     KC_MINS,           KC_COMM, KC_DOT,  KC_SLSH, KC_H,    KC_N,      KC_PLUS,               KC_EXLM,      KC_V,    KC_D,    KC_C,    KC_K,     KC_G,    KC_Q,
     CTL_T(KC_ENT),     KC_A,    KC_I,    KC_E,    HN,      LCTL(KC_C),KC_RABK,               KC_LABK,      KC_M,    KC_T,    KC_S,    KC_R,     KC_L,    CTL_T(KC_TAB),
-    KC_F5,             KC_QUOT, KC_U,    KC_O,    KC_W,    KC_Y,      KC_AT,   OSM(MOD_LCTL),KC_HASH,      KC_X,    KC_P,    KC_F,    KC_B,     KC_APP,  LT(EURO,KC_GRV),
+    KC_F5,             KC_QUOT, KC_U,    KC_O,    KC_W,    KC_Y,      KC_AT,   KC_CAPS,      KC_HASH,      KC_X,    KC_P,    KC_F,    KC_B,     KC_APP,  LT(SYMB,KC_GRV),
     KC_ESC,            KC_RCBR, KC_DQUO, KC_SCLN, KC_ASTR,                     CW_TOGG,                    KC_DLR,  KC_PERC, KC_TILD, KC_CIRC,  KC_LCBR, KC_APP
   ),
   [NUMB] = LAYOUT_1_a(
@@ -173,20 +174,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,           KC_GRV,  KC_9,    KC_8,    KC_7,    KC_CIRC, _______, _______, _______, KC_PERC, KC_PERC, KC_HASH, KC_AT,   KC_EXLM, _______,
     _______,           _______, _______, _______,          _______, KC_P0,   _______,       _______, _______, _______, _______, _______
   ),
-
+  [SYMB] = LAYOUT_1_a(
+    KC_DOWN,           KC_END,  KC_F12,  KC_F11,  KC_F10,  _______, _______, _______, _______, _______, _______, _______, _______, KC_VOLD, _______,
+    KC_UP,             KC_S,    KC_F3,   KC_F2,   KC_F1,   _______, _______,          _______, _______, _______, _______, KC_MUTE, KC_VOLU, _______,
+    _______,           KC_PGUP, KC_F6,   KC_F5,   KC_F4,   KC_DEL,  _______,          _______, _______, KC_RGHT, KC_DOWN, KC_LEFT, KC_PGDN, _______,
+    _______,           KC_HOME, KC_F9,   KC_F8,   KC_F7,   KC_INS,  _______, _______, _______, _______, KC_END,  KC_UP,   KC_HOME, KC_PGUP, _______,
+    _______,           _______, _______, _______, _______,                   _______,          KC_DEL,  _______, _______, _______, _______, _______
+  ),
   [EURO] = LAYOUT_1_a(
     _______,           _______, _______, U_E6,    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     _______,           KC_E,    _______, U_E1,    _______, _______, _______,          _______, _______, K_PRVWD, KC_UP,   K_NXTWD, _______, _______,
     _______,           _______, KC_LCTL, U_E2,    KC_LSFT, KC_DEL,  _______,          _______, KC_BSPC, KC_RGHT, KC_DOWN, KC_LEFT, KC_PGDN, _______,
     _______,           UNDO,    CUT,     U_E3,    PASTE,   KC_INS,  _______, _______, _______, _______, KC_END,  KC_UP,   KC_HOME, KC_PGUP, _______,
     _______,           _______, KC_GRV,  U_E4,    _______,                   _______,          _______, _______, _______, KC_TILD, KC_CIRC, _______
-  ),
-  [SYMB] = LAYOUT_1_a(
-    KC_DOWN,           KC_END,  KC_F12,  KC_F11,    KC_F10,  _______, _______, _______, _______, _______, _______, _______, _______, KC_VOLD, _______,
-    KC_UP,             KC_S,    KC_F3,   KC_F2,   KC_F1,   _______, _______,          _______, _______, _______, _______, KC_MUTE, KC_VOLU, _______,
-    _______,           KC_PGUP, KC_F6,   KC_F5,   KC_F4,   KC_DEL,  _______,          _______, _______, KC_RGHT, KC_DOWN, KC_LEFT, KC_PGDN, _______,
-    _______,           KC_HOME, KC_F9,   KC_F8,   KC_F7,   KC_INS,  _______, _______, _______, _______, KC_END,  KC_UP,   KC_HOME, KC_PGUP, _______,
-    _______,           _______, _______, _______,                _______,    _______,    KC_DEL,        _______, _______, _______, _______, _______
   ),
   /* [CURS] = LAYOUT_1_a( */
   /*   _______,           _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, */
@@ -202,7 +202,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* https://docs.splitkb.com/hc/en-us/articles/360018614379-Using-tri-state-layers */
 /* https://docs.qmk.fm/#/ref_functions?id=update_tri_layer_statestate-x-y-z */
 layer_state_t layer_state_set_user(layer_state_t state) {
-  return update_tri_layer_state(state, NUMB, EURO, SYMB);
+  /* return update_tri_layer_state(state, NUMB, EURO, SYMB); */
+  return update_tri_layer_state(state, NUMB, SYMB, EURO);
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -262,14 +263,23 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       switch (keycode) {
       // case KC_F11:  SEND_STRING(SS_TAP(X_F12) "~"); return false;
         //case KC_F11:  unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING(SS_TAP(KC_TILD)); return false;
+      case KC_APP:  unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING(                   "'a"); return false;
+      case KC_SLSH: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "'i"); return false;
+      case KC_ASTR: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "'e"); return false;
+      case KC_PERC: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "'o"); return false;
+      case KC_TILD: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "~n"); return false;
+      case KC_DQUO: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "'o"); return false;
+      case KC_RCBR: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "'u"); return false;
+      case KC_MINS: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "---"); return false;
       case KC_SPC:  unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("and"); return false;
-      case KC_BSLS: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("``"); return false;
+      case KC_BSLS: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("````"); return false;
+      case KC_GRV:  unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("````"); return false;
       case KC_COMM: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING(" but"); return false;
       case KC_DOT:  unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING(".."); return false;
       case KC_QUOT: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bI'"); return false;
       case KC_CIRC: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bback"); return false;
-      case KC_TILD: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bforward"); return false;
-      case KC_DQUO: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bonly"); return false;
+      /* case KC_TILD: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bforward"); return false; */
+      /* case KC_DQUO: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bonly"); return false; */
       case KC_SCLN: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bwithout"); return false;
       /* case KC_GRV:  unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("```"); return false; */
         /* case KC_DOT:  unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("and"); return false; */
@@ -284,9 +294,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         /* case KC_F:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("l"); return false; */
       case KC_G:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("l"); return false;
       case KC_H:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ow"); return false; // how show however
+      /* case KC_H:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bnew"); return false; // how show however */
       case KC_I:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ous"); return false; // interest, instrument, industry,
       case KC_J:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bdj"); return false;
-      case KC_K:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b TODO"); return false;
+      case KC_K:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bnew"); return false;
         /* case KC_N:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("umber"); return false; */
       /* case KC_O:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ne"); return false; // ope */
         /* case KC_P:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("e"); return false; // ope */

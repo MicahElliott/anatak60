@@ -23,3 +23,5 @@
 #define ONESHOT_TIMEOUT 3000  /* Time (in ms) before the one shot key is released */
 #undef BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
+
+#define DYNAMIC_KEYMAP_LAYER_COUNT 5
