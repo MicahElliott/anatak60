@@ -75,68 +75,64 @@ const uint32_t PROGMEM unicode_map[] = {
 
 // Combos
 
-const uint16_t PROGMEM test_combo1[] =  {KC_L,    KC_R,    COMBO_END};
-// const uint16_t PROGMEM test_combo2[] = {KC_J,    KC_B,    COMBO_END};
-const uint16_t PROGMEM test_combo3[] =  {KC_K,    KC_G,    COMBO_END};
-const uint16_t PROGMEM test_combo4[] =  {KC_DOT,  KC_COMM, COMBO_END};
-const uint16_t PROGMEM test_combo5[] =  {KC_C,    KC_D,    COMBO_END};
-const uint16_t PROGMEM test_combo6[] =  {KC_G,    KC_V,  COMBO_END};
-const uint16_t PROGMEM test_combo7[] =  {KC_B,    KC_F,    COMBO_END};
-const uint16_t PROGMEM test_combo8[] =  {KC_F,    KC_P,    COMBO_END};
-const uint16_t PROGMEM test_combo9[] =  {KC_F,    KC_S,    COMBO_END};
-/* const uint16_t PROGMEM test_combo10[] = {KC_P,    KC_V,    COMBO_END}; */
+const uint16_t PROGMEM combo_bf[] = {KC_F,    KC_B,    COMBO_END};
+const uint16_t PROGMEM combo_kg[] = {KC_K,    KC_G,    COMBO_END};
+const uint16_t PROGMEM combo_cd[] = {KC_C,    KC_D,    COMBO_END};
+/* const uint16_t PROGMEM combo_cf[] = {KC_F,    KC_C,    COMBO_END}; */
+const uint16_t PROGMEM combo_xm[] = {KC_X,    KC_M,    COMBO_END};
+const uint16_t PROGMEM combo_pn[] = {KC_P,    KC_N,    COMBO_END};
+const uint16_t PROGMEM combo_dw[] = {KC_D,    KC_W,    COMBO_END};
+const uint16_t PROGMEM combo_kd[] = {KC_K,    KC_D,    COMBO_END};
+const uint16_t PROGMEM combo_tf[] = {KC_T,    KC_F,    COMBO_END}; // unused
+const uint16_t PROGMEM combo_mw[] = {KC_M,    KC_W,    COMBO_END};
+const uint16_t PROGMEM combo_vg[] = {KC_V,    KC_G,    COMBO_END};
+const uint16_t PROGMEM combo_px[] = {KC_P,    KC_X,    COMBO_END};
+const uint16_t PROGMEM combo_vs[] = {KC_V,    KC_S,    COMBO_END};
+const uint16_t PROGMEM combo_bt[] = {KC_B,    KC_T,    COMBO_END}; // unused
 const uint16_t PROGMEM test_combo11[] = {KC_COMM, KC_MINS, COMBO_END};
-const uint16_t PROGMEM test_combo13[] = {KC_SLSH, KC_DOT,  COMBO_END};
-const uint16_t PROGMEM test_combo14[] = {KC_DQUO, KC_B,    COMBO_END};
-const uint16_t PROGMEM test_combo15[] = {KC_F,    KC_S,    COMBO_END};
-const uint16_t PROGMEM test_combo16[] = {KC_P,    KC_X,    COMBO_END};
-const uint16_t PROGMEM test_combo17[] = {KC_X,    KC_M,    COMBO_END};
-const uint16_t PROGMEM test_combo18[] = {KC_W,    KC_M,    COMBO_END};
-const uint16_t PROGMEM test_combo19[] = {KC_T,    KC_D,    COMBO_END};
-const uint16_t PROGMEM test_combo20[] = {KC_K,    KC_D,    COMBO_END};
-const uint16_t PROGMEM test_combo21[] = {KC_B,    KC_DQUO, COMBO_END};
-const uint16_t PROGMEM test_combo22[] = {KC_N,    KC_H,    COMBO_END};
-const uint16_t PROGMEM test_combo23[] = {KC_H,    KC_SLSH, COMBO_END};
-const uint16_t PROGMEM test_combo24[] = {KC_T,    KC_M,    COMBO_END};
-const uint16_t PROGMEM test_combo25[] = {KC_W,    KC_Y,    COMBO_END};
-const uint16_t PROGMEM test_combo26[] = {KC_L,    KC_G,    COMBO_END};
-const uint16_t PROGMEM test_combo27[] = {KC_D,    KC_W,    COMBO_END};
-const uint16_t PROGMEM test_combo28[] = {KC_H,    KC_N,    COMBO_END};
+const uint16_t PROGMEM test_combo22[] = {KC_SCLN, KC_EQL,  COMBO_END};
+const uint16_t PROGMEM test_combo23[] = {KC_DOT,  KC_SLSH, COMBO_END};
+const uint16_t PROGMEM test_combo24[] = {KC_SCLN, KC_SLSH, COMBO_END};
+// const uint16_t PROGMEM test_combo2[] = {KC_J,    KC_B,    COMBO_END};
+/* const uint16_t PROGMEM test_combo4[] =  {KC_DOT,  KC_COMM, COMBO_END}; */
+/* const uint16_t PROGMEM test_combo9[] =  {KC_F,    KC_S,    COMBO_END}; */
+/* const uint16_t PROGMEM test_combo10[] = {KC_P,    KC_V,    COMBO_END}; */
 combo_t key_combos[] = {
-    COMBO(test_combo1, KC_APP),
-    /* COMBO(test_combo1, LCTL(KC_A)), */
+    COMBO(combo_bf, KC_A),
+    COMBO(combo_vs, KC_W),
+    COMBO(combo_kg, KC_Z),
+    COMBO(combo_cd, KC_J),
+    COMBO(combo_pn, KC_COLN),
+    COMBO(combo_dw, LCTL(KC_TAB)),
+    COMBO(combo_vg, LCTL(LGUI(KC_V))),
+    COMBO(combo_px, KC_PIPE),
+    COMBO(combo_mw, LCTL(KC_V)),
+    COMBO(combo_xm, LCTL(KC_X)),
+    COMBO(combo_kd, LCTL(KC_C)),
+    /* COMBO(combo_cf, KC_COLN), */
+    /* COMBO(combo_cd, KC_COLN), TODO */
+    COMBO(test_combo11, KC_GRV),
+    COMBO(test_combo22, KC_DLR), // TODO
+    COMBO(test_combo23, KC_QUES),
+    COMBO(test_combo24, KC_CIRC),
+    /* COMBO(combo_bf, KC_APP), */
+    /* COMBO(combo_bf, LCTL(KC_A)), */
     // COMBO(test_combo2, LCTL(KC_W)),
-    COMBO(test_combo3,  KC_Z),
     /* COMBO(test_combo4,  SEND_STRING(SS_TAP(X_APP) "'")), */
-    COMBO(test_combo5,  KC_J),
-    COMBO(test_combo6,  LCTL(LGUI(KC_V))),
-    COMBO(test_combo7,  LCTL(KC_TAB)),
-    COMBO(test_combo8,  KC_EQL),
-    COMBO(test_combo9,  LCTL(KC_W)),
+    /* COMBO(combo_vb,  KC_EQL), */
+    /* COMBO(test_combo9,  LCTL(KC_W)), */
     /* COMBO(test_combo10, LCTL(KC_V)), */
     /* COMBO(test_combo10, KC_AT), */
-    COMBO(test_combo11, KC_GRV),
-    COMBO(test_combo13, KC_QUES),
-    /* COMBO(test_combo13, KC_QUES), */ // TODO
     /* COMBO(test_combo2, LClrTL(KC_Z)), // keycodes with modifiers are possible too! */
-    COMBO(test_combo16, KC_PIPE),
-    COMBO(test_combo17, LCTL(KC_X)),
-    COMBO(test_combo18, LCTL(KC_V)),
-    COMBO(test_combo20, LCTL(KC_C)),
     /* COMBO(test_combo21, KC_), */
-    COMBO(test_combo22, KC_ASTR),
-    COMBO(test_combo23, KC_UNDS),
-    COMBO(test_combo24, KC_COLN),
-    COMBO(test_combo25, KC_COLN),
-    COMBO(test_combo26,  LCTL(KC_A)),
-    COMBO(test_combo27,  KC_V),
-    COMBO(test_combo28,  KC_V),
+    /* COMBO(test_combo22, KC_ASTR), */
+    /* COMBO(test_combo25, KC_COLN), */
+    /* COMBO(test_combo26,  LCTL(KC_A)), */
+    /* COMBO(test_combo27,  KC_V), */
+    /* COMBO(test_combo28,  KC_V), */
 };
 
-
 #define IS_MOD(code) (KC_LEFT_CTRL <= (code) && (code) <= KC_RIGHT_GUI)
-
-
 
 enum layer_names {
     BASE,
@@ -168,10 +164,10 @@ bool prenasal(void) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT_1_a(
     LT(NUMB,KC_GRV),   _______, K_SCRN,  GUI_RBRC,SC_RAPC, KC_SPC,    KC_BSPC, KC_CAPS,      OSM(MOD_LSFT),QK_REP,  SC_LAPO, GUI_LBRC,SUPTAB,   _______, LT(NUMB,KC_BSLS),
-    KC_MINS,           KC_COMM, KC_DOT,  KC_SLSH, KC_H,    KC_N,      KC_DLR,                KC_EXLM,      KC_W,    KC_D,    KC_C,    KC_K,     KC_G,    KC_V,
-    CTL_T(KC_ENT),     KC_A,    KC_I,    KC_E,    HN,      LCTL(KC_C),KC_RABK,               KC_LABK,      KC_M,    KC_T,    KC_S,    KC_R,     KC_L,    CTL_T(KC_TAB),
-    KC_DQUO,           KC_QUOT, KC_U,    KC_O,    KC_Y,    KC_F5,     KC_AT,   KC_CAPS,      KC_HASH,      KC_X,    KC_P,    KC_F,    KC_B,     KC_Q,  LT(SYMB,KC_GRV),
-    KC_ESC,            KC_RCBR, KC_PLUS, KC_SCLN, KC_ASTR,                     CW_TOGG,                    KC_ESC,  KC_PERC, KC_TILD, KC_CIRC,  KC_LCBR, KC_BSPC
+    KC_MINS,           KC_COMM, KC_DOT,  KC_SLSH, KC_SCLN, KC_EQL,    KC_DLR,                KC_EXLM,      KC_W,    KC_D,    KC_C,    KC_K,     KC_G,    KC_V,
+    CTL_T(KC_ENT),     KC_A,    KC_I,    KC_E,    KC_H,    LCTL(KC_C),KC_RABK,               KC_LABK,      KC_M,    KC_N,    KC_R,    KC_T,     KC_S,    CTL_T(KC_TAB),
+    KC_DQUO,           KC_QUOT, KC_U,    KC_O,    KC_Y,    KC_F5,     KC_AT,   KC_CAPS,      KC_HASH,      KC_X,    KC_P,    KC_L,    KC_F,     KC_B,    LT(SYMB,KC_GRV),
+    KC_ESC,            KC_RCBR, KC_PLUS, KC_UNDS, KC_ASTR,                     CW_TOGG,                    KC_ESC,  KC_PERC, KC_TILD, KC_Q,  KC_LCBR, KC_BSPC
   ),
   [NUMB] = LAYOUT_1_a(
     _______,           _______, CW_TOGG, _______, KC_0,    _______, _______, DF(0),   _______, _______, _______, _______, _______, _______, _______,
@@ -273,18 +269,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       /* case KC_SLSH: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "'i"); return false; */
       /* case KC_SLSH: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bhowever"); return false; */
       case KC_SLSH: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "'e"); return false;
-      case KC_EXLM: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bwork"); return false;
-      case KC_ASTR: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bhowever"); return false;
+      case KC_EXLM: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bmark"); return false;
+      case KC_LT: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bfrom"); return false;
+      /* case KC_ASTR: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bhowever"); return false; */
       case KC_PERC: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "~n"); return false;
         /* case KC_TILD: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "~n"); return false; */
       /* case KC_TILD: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "~n"); return false; */
       case KC_TILD:  unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "~n"); return false;
       /* case KC_DQUO: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "'o"); return false; */
       case KC_DQUO: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bn't"); return false;
-      case KC_PLUS: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bhowever"); return false;
+      /* case KC_PLUS: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bhowever"); return false; */
       case KC_DLR:  unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b TODO"); return false;
       /* case KC_RABK:  unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "~n"); return false; */
-      case KC_LABK: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bwork"); return false;
+      /* case KC_LABK: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bwork"); return false; */
       case KC_RCBR: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "'u"); return false;
       /* case KC_MINS: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "---"); return false; */
       /* case KC_MINS: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bn't"); return false; */
@@ -300,7 +297,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       /* case KC_DOT:  unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING(".."); return false; */
       case KC_DOT: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "'i"); return false;
       case KC_QUOT: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bI'"); return false;
-      case KC_CIRC: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bbetween"); return false;
+      case KC_CIRC: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bbetween"); return false; // FIXME
       /* case KC_AT:   unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bwhy"); return false; */
       case KC_AT:   unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "'a"); return false;
       /* case KC_DQUO: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bonly"); return false; */
@@ -318,9 +315,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         /* case KC_F:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("rom"); return false; */ // too many doubles
         /* case KC_F:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("orward"); return false; */
         /* case KC_F:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("l"); return false; */
-      case KC_G:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("l"); return false;
+      case KC_G:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ive"); return false;
       /* case KC_H:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("o"); return false; // how show however */
-      case KC_H: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "'o"); return false;
+      /* case KC_H: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "'o"); return false; */
+      /* case KC_H: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("owever"); return false; */
+      case KC_H: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bome"); return false;
       /* case KC_H:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bnew"); return false; // how show however */
       case KC_I:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ous"); return false; // interest, instrument, industry,
       /* case KC_I:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "'i"); return false; */
@@ -337,12 +336,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         /* case KC_R:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ly"); return false; */
       /* case KC_U:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("i"); return false; */
       case KC_U:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("i"); return false;
-      case KC_X:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bcept"); return false;
+      case KC_X:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bfrom"); return false;
       /* case KC_W:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("hy"); return false; */
       case KC_W:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ith"); return false;
       case KC_V:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ery"); return false;
       /* case KC_Y:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("eah"); return false; */
-      case KC_Y: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bone"); return false;
+      /* case KC_Y: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ou"); return false; */
+      case KC_Y: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bTODO"); return false;
       }
       /* return true; */
     }
