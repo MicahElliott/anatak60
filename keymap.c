@@ -76,7 +76,7 @@ const uint32_t PROGMEM unicode_map[] = {
 
 /* const uint16_t PROGMEM combo_scln_b[] = {KC_SCLN,    KC_B,    COMBO_END}; */
 /* const uint16_t PROGMEM combo_qb[] = {KC_Q,    KC_B,    COMBO_END}; */
-const uint16_t PROGMEM combo_gk[] = {KC_G,    KC_K,    COMBO_END};
+const uint16_t PROGMEM combo_gv[] = {KC_G,    KC_V,    COMBO_END};
 /* const uint16_t PROGMEM combo_dp[] = {KC_D,    KC_P,    COMBO_END}; */
 /* const uint16_t PROGMEM combo_lw[] = {KC_F,    KC_W,    COMBO_END}; */
 const uint16_t PROGMEM combo_lw[] = {KC_L,    KC_W,    COMBO_END};
@@ -92,7 +92,7 @@ const uint16_t PROGMEM combo_bt[] = {KC_B,    KC_T,    COMBO_END};
 /* const uint16_t PROGMEM combo_dt[] = {KC_D,    KC_T,    COMBO_END}; */
 /* const uint16_t PROGMEM combo_kv[] = {KC_K,    KC_V,    COMBO_END}; */
 /* const uint16_t PROGMEM combo_kq[] = {KC_K,    KC_Q,    COMBO_END}; */
-const uint16_t PROGMEM combo_tk[] = {KC_T,    KC_K,    COMBO_END};
+const uint16_t PROGMEM combo_tv[] = {KC_T,    KC_V,    COMBO_END};
 /* const uint16_t PROGMEM combo_mh[] = {KC_M,    KC_H,    COMBO_END}; */
 /* const uint16_t PROGMEM combo_kl[] = {KC_K,    KC_L,    COMBO_END}; */
 const uint16_t PROGMEM combo_lg[] = {KC_L,    KC_G,    COMBO_END};
@@ -113,7 +113,7 @@ const uint16_t PROGMEM test_combo26[] = {KC_P, KC_X, COMBO_END};
 combo_t key_combos[] = {
     /* COMBO(combo_scln_b, KC_A), */
     /* COMBO(combo_qb, KC_A), */
-    COMBO(combo_gk, KC_Z),
+    COMBO(combo_gv, KC_Z),
     COMBO(combo_fp, KC_E),
     COMBO(combo_td, KC_J),
     COMBO(combo_fd, KC_L),
@@ -122,7 +122,7 @@ combo_t key_combos[] = {
     COMBO(combo_pn, KC_COLN),
     COMBO(combo_bt, LCTL(KC_TAB)),
     /* COMBO(combo_kv, KC_DLR), // TOOD */
-    COMBO(combo_tk, KC_DLR), // TOOD
+    COMBO(combo_tv, KC_DLR), // TOOD
     /* COMBO(combo_mh, KC_AT), // TOOD */
     COMBO(combo_lg, LCTL(LGUI(KC_V))),
     COMBO(test_combo26, KC_PIPE),
@@ -189,8 +189,8 @@ bool prenasal(void) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT_1_a(
     LT(NUMB,KC_GRV),   _______, K_SCRN,  GUI_RBRC,SC_RAPC, KC_SPC,    KC_BSPC, KC_CAPS,      OSM(MOD_LSFT),QK_REP,  SC_LAPO, GUI_LBRC,SUPTAB, _______, LT(NUMB,KC_BSLS),
-    KC_MINS,           KC_COMM, KC_DOT,  KC_SLSH, KC_Y,  KC_HASH,   KC_DLR,                  KC_EXLM,      KC_W,    KC_R,    KC_C,    KC_K,   KC_G,    KC_L,
-    CTL_T(KC_ENT),     KC_A,    KC_I,    KC_E,    HN,      LCTL(KC_C),KC_RABK,               KC_LABK,      KC_V,    KC_N,    KC_D,    KC_T,   KC_S,    CTL_T(KC_TAB),
+    KC_MINS,           KC_COMM, KC_DOT,  KC_SLSH, KC_Y,  KC_HASH,   KC_DLR,                  KC_EXLM,      KC_W,    KC_R,    KC_C,    KC_V,   KC_G,    KC_L,
+    CTL_T(KC_ENT),     KC_A,    KC_I,    KC_E,    HN,      LCTL(KC_C),KC_RABK,               KC_LABK,      KC_K,    KC_N,    KC_D,    KC_T,   KC_S,    CTL_T(KC_TAB),
     KC_DQUO,           KC_QUOT, KC_U,    KC_O,    KC_H,    KC_F5,     KC_AT,   KC_CAPS,      KC_TILD,      KC_X,    KC_P,    KC_F,    KC_B,   KC_SCLN,    LT(SYMB,KC_GRV),
     KC_ESC,            KC_RCBR, KC_PLUS, KC_UNDS, KC_ASTR,                     CW_TOGG,                    KC_ESC,  KC_PERC, KC_EQL,  KC_Q,   KC_LCBR, KC_BSPC
                       ),
@@ -361,7 +361,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       /* case KC_J:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bdj"); return false; */
       case KC_J:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ust"); return false;
       /* case KC_K:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bcomp"); return false; */
-      case KC_K:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bThank"); return false;
+      /* case KC_K:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bThank"); return false; */
+      case KC_K:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("now"); return false;
       /* case KC_N:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("umber"); return false; */
       /* case KC_O:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ne"); return false; // ope */
         /* case KC_P:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("e"); return false; // ope */
@@ -375,7 +376,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       /* case KC_X:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bject"); return false; */
       case KC_X:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bprov"); return false;
         /* case KC_W:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("hy"); return false; */
-      case KC_W:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ith"); return false;
+      /* case KC_W:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ith"); return false; */
+      case KC_W:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ork"); return false;
       case KC_V:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ery"); return false;
       /* case KC_Y:    unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("eah"); return false; */
       /* case KC_Y: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("ou"); return false; */
