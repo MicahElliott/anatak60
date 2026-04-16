@@ -108,6 +108,8 @@ const uint16_t PROGMEM test_combo22[] = {KC_HASH, KC_Y,  COMBO_END};
 const uint16_t PROGMEM test_combo23[] = {KC_DOT,  KC_SLSH, COMBO_END};
 const uint16_t PROGMEM test_combo24[] = {KC_EQL, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM test_combo25[] = {KC_DOT, KC_COMM, COMBO_END};
+const uint16_t PROGMEM test_combo26[] = {KC_DOT, KC_EQL, COMBO_END};
+const uint16_t PROGMEM test_combo27[] = {KC_M, KC_COMM, COMBO_END};
 /* const uint16_t PROGMEM test_px[] = {KC_P, KC_X, COMBO_END}; */
 // const uint16_t PROGMEM test_combo2[] = {KC_J,    KC_B,    COMBO_END};
 /* const uint16_t PROGMEM test_combo4[] =  {KC_DOT,  KC_COMM, COMBO_END}; */
@@ -120,12 +122,12 @@ combo_t key_combos[] = {
     /* COMBO(combo_fd, KC_V), */
     COMBO(combo_pd, KC_SCLN),
     COMBO(combo_bp, KC_Q),
-    COMBO(combo_xd, KC_TILD),
+    COMBO(combo_xd, KC_DLR), // TODO
     COMBO(combo_fw, KC_DLR), // TODO
     COMBO(combo_bt, LCTL(KC_TAB)),
     /* COMBO(combo_gt, LCTL(KC_G)), */
     COMBO(combo_gt, KC_COLN),
-    COMBO(combo_tk, KC_EXLM), // TODO
+    COMBO(combo_tk, KC_TILD),
     COMBO(combo_mh, KC_AT), // won't work
     COMBO(combo_yg, LCTL(LGUI(KC_V))),
     /* COMBO(combo_wc, KC_COLN), */
@@ -145,6 +147,8 @@ combo_t key_combos[] = {
     COMBO(test_combo23, KC_QUES),
     COMBO(test_combo24, KC_CIRC),
     COMBO(test_combo25, KC_DLR),
+    COMBO(test_combo26, KC_AMPR),
+    COMBO(test_combo27, KC_DLR), // TODO
     COMBO(combo_gk, KC_Z),
     COMBO(combo_df, KC_EXLM),
     /* COMBO(combo_gk, KC_APP), */
@@ -202,10 +206,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESC,            KC_RCBR, KC_PLUS, KC_UNDS, KC_ASTR,                     CW_TOGG,                    KC_ESC,  KC_PERC, KC_J,    KC_AT,  KC_LCBR, KC_BSPC
                       ),
   [NUMB] = LAYOUT_1_a(
-    _______,           _______, CW_TOGG, _______, KC_0,    _______, _______, DF(0),   _______, _______, _______, _______, _______, _______, _______,
-    _______,           KC_SLSH, KC_3,    KC_2,    KC_1,    KC_GT,   _______,          _______, KC_LT,   KC_PIPE, KC_F11,     _______, KC_LCBR, _______,
-    _______,           KC_DOT,  KC_6,    KC_5,    KC_4,    KC_RCBR, _______,          _______, KC_LCBR, KC_DLR,  KC_BSLS, _______, KC_AMPR, _______,
-    _______,           KC_GRV,  KC_9,    KC_8,    KC_7,    KC_CIRC, _______, _______, _______, KC_PERC, KC_PERC, KC_HASH, KC_AT,   KC_EXLM, _______,
+    _______,           _______, CW_TOGG, _______, _______,  _______, _______, DF(0),   _______, _______, _______, _______, _______, _______, _______,
+    _______,           KC_SLSH, _______, _______, _______, KC_GT,   _______,          _______, KC_LT,   KC_PIPE, KC_F11,  _______, KC_LCBR, _______,
+    _______,           KC_0,    KC_6,    KC_5,    KC_4,    KC_RCBR, _______,          _______, KC_LCBR, KC_3,    KC_2,    KC_1,    KC_AMPR, _______,
+    _______,           _______, KC_9,    KC_8,    KC_7,    KC_DLR,  _______, _______, _______, KC_PERC, KC_PERC, KC_HASH, KC_AT,   KC_EXLM, _______,
     _______,           _______, _______, _______,          _______, KC_P0,   _______,       _______, _______, _______, _______, _______
   ),
   [SYMB] = LAYOUT_1_a(
@@ -338,11 +342,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       /* case KC_COMM: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING(" but"); return false; */
       /* case KC_COMM: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bpro"); return false; */
       /* case KC_COMM: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b" SS_TAP(X_APP) "'a"); return false; */
-      case KC_COMM: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bight"); return false;
+      case KC_DOT: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bight"); return false;
       /* case KC_DOT:  unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING(".."); return false; */
       /* case KC_DOT: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\binst"); return false; */
       /* case KC_DOT:  unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("and"); return false; */
-      case KC_DOT: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bn't"); return false;
+      case KC_COMM: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bn't"); return false;
       case KC_QUOT: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bI'"); return false;
       case KC_CIRC: unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\b TODO"); return false; // FIXME
       /* case KC_AT:   unregister_weak_mods(MOD_MASK_CSAG); SEND_STRING("\bwhy"); return false; */
