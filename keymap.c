@@ -206,17 +206,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESC,            KC_RCBR, KC_PLUS, KC_UNDS, KC_ASTR,                     CW_TOGG,                    KC_ESC,  KC_PERC, KC_J,    KC_AT,  KC_LCBR, KC_BSPC
                       ),
   [NUMB] = LAYOUT_1_a(
-    _______,           _______, CW_TOGG, _______, _______,  _______, _______, DF(0),   _______, _______, _______, _______, _______, _______, _______,
-    _______,           KC_SLSH, _______, _______, _______, KC_GT,   _______,          _______, KC_LT,   KC_PIPE, KC_F11,  _______, KC_LCBR, _______,
-    _______,           KC_0,    KC_6,    KC_5,    KC_4,    KC_RCBR, _______,          _______, KC_LCBR, KC_3,    KC_2,    KC_1,    KC_AMPR, _______,
+    _______,           _______, CW_TOGG, _______, KC_0,    _______, _______, DF(0),   _______, _______, _______, _______, _______, _______, _______,
+    _______,           _______, KC_3,    KC_2,    KC_1,    _______, _______,          _______, KC_LT,   KC_PIPE, KC_F11,  _______, KC_LCBR, _______,
+    _______,           KC_DOT,  KC_6,    KC_5,    KC_4,    _______, _______,          _______, KC_LCBR, KC_3,    KC_2,    KC_1,    KC_AMPR, _______,
     _______,           _______, KC_9,    KC_8,    KC_7,    KC_DLR,  _______, _______, _______, KC_PERC, KC_PERC, KC_HASH, KC_AT,   KC_EXLM, _______,
     _______,           _______, _______, _______,          _______, KC_P0,   _______,       _______, _______, _______, _______, _______
   ),
   [SYMB] = LAYOUT_1_a(
     KC_DOWN,           KC_END,  KC_F12,  KC_F11,  KC_F10,  _______, _______, _______, _______, _______, _______, _______, _______, KC_VOLD, _______,
-    KC_UP,             KC_S,    KC_F3,   KC_F2,   KC_F1,   _______, _______,          _______, _______, _______, _______, KC_MUTE, KC_VOLU, _______,
-    _______,           KC_PGUP, KC_F6,   KC_F5,   KC_F4,   KC_DEL,  _______,          _______, _______, KC_RGHT, KC_DOWN, KC_LEFT, KC_PGDN, _______,
-    _______,           KC_HOME, KC_F9,   KC_F8,   KC_F7,   KC_INS,  _______, _______, _______, _______, KC_END,  KC_UP,   KC_HOME, KC_PGUP, _______,
+    KC_UP,             KC_S,    KC_F3,   KC_F2,   KC_F1, KC_MS_BTN3,_______,          _______, _______, _______, KC_MUTE, KC_VOLU, _______, _______,
+    _______,           KC_F4,   KC_F6,   KC_F5,   KC_F4,   KC_DEL,  _______,          _______, _______, KC_RGHT, KC_DOWN, KC_LEFT, KC_PGDN, _______,
+    _______,           KC_F8,   KC_F9,   KC_F8,   KC_F7,   KC_INS,  _______, _______, _______, _______, KC_END,  KC_UP,   KC_HOME, KC_PGUP, _______,
     _______,           _______, _______, _______, _______,                   _______,          KC_DEL,  _______, _______, _______, _______, _______
   ),
   [EURO] = LAYOUT_1_a(
